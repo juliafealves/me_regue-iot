@@ -2,7 +2,7 @@
 
 [pt-br]
 
-## Calculo da Umidade do Solo
+## Cálculo da Umidade do Solo
 
 Quanto maior o numero lido do ADC, menor a umidad. Sendo assim, calcula-se a porcentagem de umidade por:
 ```     
