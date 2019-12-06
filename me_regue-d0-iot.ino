@@ -1,15 +1,13 @@
 #include <ESP8266WiFi.h>
  
-//defines
-#define SSID_NETWORK "brisa-669671"
-#define PASSWORD_NETWORK "zvgtskf4"
+#define SSID_NETWORK ""
+#define PASSWORD_NETWORK ""
 #define INTERVAL_SEND_THINGSPEAK 30000
 #define INPUT_D0 13
 #define LED_HUMIDITY 12
 #define LED_NO_HUMIDITY 14
 #define LED_NETWORK 15
  
-//constantes e variáveis globais
 char UrlAPI[] = "api.thingspeak.com";
 String ApiWriteKeyThingSpeak = "713U5W87STXFDUGO";
 long lastConnectionTime; 
@@ -43,7 +41,7 @@ void sendInformationsAPI(String data)
     client.print(data);
 
     lastConnectionTime = millis();
-    Serial.println("- Informações enviadas ao ThingSpeak!");
+    Serial.println("Sent to ThingSpeak!");
   }
 }
  
@@ -71,6 +69,9 @@ void connectWifi(void)
     delay(1000);
 }
 
+/**
+ * Verify if has humidity.
+ */
 int hasHumidity(void)
 {
   int isHumidity;
@@ -115,7 +116,6 @@ void loop()
 {
   char FieldHumidity[11];
   
-  //Força desconexão ao ThingSpeak (se ainda estiver desconectado)
   if (client.connected())
   {
     client.stop();
