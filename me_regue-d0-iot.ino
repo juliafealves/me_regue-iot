@@ -1,7 +1,7 @@
 #include <ESP8266WiFi.h>
  
-#define SSID_NETWORK ""
-#define PASSWORD_NETWORK ""
+#define SSID_NETWORK "iPhone de Julia"
+#define PASSWORD_NETWORK "s3nh4jul14"
 #define INTERVAL_SEND_THINGSPEAK 30000
 #define INPUT_D0 13
 #define LED_HUMIDITY 12
@@ -20,6 +20,7 @@ bool checkIfCanSend(void);
 void connectWifi(void);
 int hasHumidity(void);
 void sendInformationsAPI(String data);
+void showHasHumidity(void);
  
 /**
  * Send information to API.
@@ -78,7 +79,12 @@ int hasHumidity(void)
   isHumidity = digitalRead(INPUT_D0);
   Serial.println(isHumidity);
 
-  if(!isHumidity){
+  return isHumidity;
+}
+
+void showHasHumidity(void)
+{
+  if(!hasHumidity()){
     Serial.println("WITH HUMIDITY");
     digitalWrite(LED_HUMIDITY, HIGH);
     digitalWrite(LED_NO_HUMIDITY, LOW);
@@ -87,8 +93,6 @@ int hasHumidity(void)
     digitalWrite(LED_HUMIDITY, LOW);
     digitalWrite(LED_NO_HUMIDITY, HIGH);
   }
-
-  return isHumidity;
 }
 
 /*
@@ -136,6 +140,7 @@ void loop()
       delay(100);
     }
   }
- 
+  
+  showHasHumidity();
   delay(1000);
 }
