@@ -1,5 +1,7 @@
 # Me Regue IoT
 
+> Este projeto foi desenvolvido para a disciplina de (Laboratório de) Organização e Arquitetura de Compuadores.
+
 <img src="me_regue_logo.png" height="200" />
 
 [pt-br]
