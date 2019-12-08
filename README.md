@@ -1,8 +1,12 @@
 # Me Regue IoT
 
+<img src="me_regue_logo.png" height="200" />
+
 [pt-br]
 
 ## O Projeto
+
+<img src="meregueiot.jpeg" width="500" />
 
 É indispensável saber a condição de quantidade de água no solo, essa umidade influencia em construções, plantações e até mesmo na irrigação de um jardim, mas como a umidade do solo costuma oscilar, precisamos efetuar medições constantes nesse meio. Pensando nisso criamos o projeto que consiste em verificar a partir de determinado solo  sua umidade através de um sensor conectado a uma protoboard.
 
